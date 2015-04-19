@@ -9,9 +9,28 @@ angular.module('starter.controllers', [])
   $scope.remove = function(line) {
     Lines.remove(line);
   }
+
+  $ionicModal.fromTemplateUrl('templates/filter-modal.html', {
+        scope: $scope
+      
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.closeModal = function(index) {
+        $scope.modal.hide();
+    };
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+
+    $scope.openModal = function() {
+        $scope.modal.show();
+    };
 })
 
-.controller('LineDetailCtrl', function($scope, $stateParams, Lines) {
-  $scope.line = Lines.get($stateParams.lineId);
-
+.controller('RouteDetailCtrl', function($scope, $stateParams, Lines, routeAttempts) {
+  $scope.route = Lines.getRoute($stateParams.routeId);
+  $scope.line = Lines.getLine($stateParams.lineId);
+  $scope.attempts = routeAttempts.get($stateParams.routeId);
 })

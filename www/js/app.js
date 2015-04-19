@@ -67,7 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
     .state('tab.route', {
-      url: '/route/:routeId',
+      url: '/routes/:lineId/:routeId',
       views: {
         'tab-lines': {
           templateUrl: 'templates/route-detail.html',

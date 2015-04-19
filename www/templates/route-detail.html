@@ -1,0 +1,20 @@
+<ion-view view-title="{{route.color | capitalize:true}} {{route.grade}} on Line {{line.id}}">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Text here
+                </div>
+                <select>
+                  <option selected>Success</option>
+                  <option>Failed</option>
+                </select>
+            </label>
+            <div ng-repeat="attempt in attempts">
+                <p>{{attempt.routeId}}</p>
+                <p>{{attempt.date | date: mediumDate}}</p>
+                <p>{{attempt.success}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
