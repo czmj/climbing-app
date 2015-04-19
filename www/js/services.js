@@ -1,50 +1,105 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Lines', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+  var lines = [{
+      id: 1,
+      type: "top rope",
   }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  }, {
-    id: 2,
-    name: 'Andrew Jostlin',
-    lastText: 'Did you get the ice cream?',
-    face: 'https://pbs.twimg.com/profile_images/491274378181488640/Tti0fFVJ.jpeg'
-  }, {
-    id: 3,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 4,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/491995398135767040/ie2Z_V6e.jpeg'
+      id: 2,
+      type: "lead"
+  },{
+      id: 3,
+      type: "top rope"
+  },{
+      id: 4,
+      type: "top rope"
+  },{
+      id: 5,
+      type: "lead"
   }];
 
   return {
     all: function() {
-      return chats;
+      return lines;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(line) {
+      lines.splice(lines.indexOf(line), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(lineId) {
+      for (var i = 0; i < lines.length; i++) {
+        if (lines[i].id === parseInt(lineId)) {
+          return lines[i];
         }
       }
       return null;
     }
-  };
+  }
+})
+
+.factory('Routes', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var routes = [{
+          line: 1,
+          color: 'pink',
+          grade: '4+',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 1,
+          color: 'grey',
+          grade: '5+',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 1,
+          color: 'black',
+          grade: '6a',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 2,
+          color: 'rainbow',
+          grade: '5',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 2,
+          color: 'blue',
+          grade: '5+',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 3,
+          color: 'yellow',
+          grade: '5',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 4,
+          color: 'pink',
+          grade: '4+',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 5,
+          color: 'blue',
+          grade: '4+',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      },{
+          line: 6,
+          color: 'green',
+          grade: '4+',
+          setter: 'A. Jack',
+          dateSet: '2015-04-19T15:41:31.344Z'
+      }] 
+  
+    return routes;
+
 });
+
