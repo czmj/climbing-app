@@ -1,10 +1,22 @@
-<ion-view view-title="Lines">
+<ion-view view-title="Routes">
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="line in lines" href="#/tab/line/{{line.id}}">
-        Line {{line.id}}
-        <i class="icon ion-chevron-right icon-accessory"></i>
-      </ion-item>
-    </ion-list>
+    <div class="list">
+        <div ng-repeat="line in lines">
+            <div class="item item-divider">
+                <h2 style="float:left; font-size: 20px">Line {{line.id}}</h2>
+                <span class="item-note">
+                  {{line.type | capitalize: true}}
+                </span>
+            </div>
+            <a class="item item-icon-right" href="#/tab/line/{{line.id}}" ng-repeat="route in line.routes">
+                <h2>{{route.color | capitalize:true}} {{route.grade}}</h2>
+                <p>Set by {{route.setter}} on {{route.dateSet | date: mediumDate}}</p>
+                <img src="img/tim.jpg" style="width: 25px; height: 25px; border-radius: 100%">
+                <img src="img/clara.jpg" style="width: 25px; height: 25px; border-radius: 100%">
+
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+        </div> 
+    </div>
   </ion-content>
 </ion-view>

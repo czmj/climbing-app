@@ -66,12 +66,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
-    .state('tab.line', {
-      url: '/line/:lineId',
+    .state('tab.route', {
+      url: '/route/:routeId',
       views: {
         'tab-lines': {
-          templateUrl: 'templates/line-detail.html',
-          controller: 'LineDetailCtrl'
+          templateUrl: 'templates/route-detail.html',
+          controller: 'RouteDetailCtrl'
         }
       }
     });
