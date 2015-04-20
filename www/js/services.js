@@ -12,19 +12,19 @@ angular.module('starter.services', [])
           color: 'pink', 
           grade: '4+',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z',
+          dateSet: '2015-04-20T18:37:56.552Z',
       },{
           id: 2,
           color: 'grey',
           grade: '5+',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 3,
           color: 'black',
           grade: '6a',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       }]
   }, {
       id: 2,
@@ -34,13 +34,13 @@ angular.module('starter.services', [])
           color: 'rainbow',
           grade: '5',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 5,
           color: 'blue',
           grade: '5+',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       }]
   },{
       id: 3,
@@ -50,7 +50,7 @@ angular.module('starter.services', [])
           color: 'yellow',
           grade: '5',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       }]
   },{
       id: 4,
@@ -60,7 +60,7 @@ angular.module('starter.services', [])
           color: 'pink',
           grade: '4+',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       }]
   },{
       id: 5,
@@ -70,13 +70,13 @@ angular.module('starter.services', [])
           color: 'blue',
           grade: '4+',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 9,
           color: 'green',
           grade: '4+',
           setter: 'A. Jack',
-          dateSet: '2015-04-2T15:41:31.344Z'
+          dateSet: '2015-04-20T18:37:56.552Z'
       }]
   }];
 
@@ -114,11 +114,27 @@ angular.module('starter.services', [])
   // Some fake testing data
   var attempts = [{
       routeId: 1,
-      date: '2015-04-16T15:41:31.344Z',
+      date: '2015-04-19T15:41:31.344Z',
       success: false   
   },{
      routeId: 1,
-      date: '2015-04-19T15:41:31.344Z',
+      date: '2015-04-20T18:37:56.552Z',
+      success: true   
+  },{
+     routeId: 1,
+      date: '2015-04-18T18:37:56.552Z',
+      success: true   
+  },{
+     routeId: 1,
+      date: '2015-04-1718:37:56.552Z',
+      success: false   
+  },{
+     routeId: 1,
+      date: '2015-04-16T18:37:56.552Z',
+      success: true   
+  },{
+     routeId: 1,
+      date: '2015-04-15T18:37:56.552Z',
       success: true   
   },{
      routeId: 4,
@@ -154,12 +170,18 @@ angular.module('starter.services', [])
           lines.splice(lines.indexOf(line), 1);
         },
         get: function(routeId) {
+            var attemptList = [];
             for (var i = 0; i < attempts.length; i++) {
                 if (attempts[i].routeId === parseInt(routeId)) {
-                  return attempts[i];
+                    attemptList.push(attempts[i]);
                 }
             }
-            return null;
+            
+            if (attemptList.length === 0){
+                return null;
+            }
+            
+            return attemptList;
         }
     }
-})
+});
