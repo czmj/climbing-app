@@ -7,6 +7,7 @@ angular.module('starter.services', [])
   var lines = [{
       id: 1,
       type: 'top rope',
+      
       routes: [{
           id: 1,
           color: 'pink', 
@@ -26,6 +27,7 @@ angular.module('starter.services', [])
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
+      
   }, {
       id: 2,
       type: 'lead',
@@ -42,6 +44,7 @@ angular.module('starter.services', [])
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
+      
   },{
       id: 3,
       type: 'top rope',
@@ -52,6 +55,7 @@ angular.module('starter.services', [])
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
+      
   },{
       id: 4,
       type: 'top rope',
@@ -62,6 +66,7 @@ angular.module('starter.services', [])
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
+      
   },{
       id: 5,
       type: 'lead',
@@ -165,6 +170,20 @@ angular.module('starter.services', [])
   return {
         all: function() {
           return attempts;
+        },
+        add: function(id, successBool) {
+            var today = new Date(),
+                dateString = today.toISOString(),
+                idInt = parseInt(id);
+            
+            var attempt = {
+                routeId: idInt,
+                date: dateString,
+                success: successBool
+            }
+            
+            attempts.push(attempt);
+            
         },
         remove: function(attempt) {
           attempts.splice(attempts.indexOf(attempt), 1);

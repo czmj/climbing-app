@@ -1,17 +1,22 @@
 <ion-modal-view>
     <ion-header-bar class="bar bar-header bar-positive">
-        <h1 class="title">Add climb</h1>
+        <h1 class="title">Add climb - {{route.color | capitalize: true}} {{route.grade}} on Line {{line.id}}</h1>
         <button class="button button-clear button-primary" ng-click="modal.hide()">
             <i class="icon ion-ios-close-empty"></i>
         </button>
     </ion-header-bar>
-    <ion-content class="padding">
-        <div class="list">
-            
-            <button class="button button-block button-stable" ng-click="modal.hide()">
+    <ion-content>
+        <form class="list" ng-submit="addClimb(attempt)">
+            <ion-radio ng-model="attempt.success" ng-value="true">
+                Success
+            </ion-radio>
+            <ion-radio ng-model="attempt.success" ng-value="false">
+                Failed
+            </ion-radio>
+            <button type="submit" class="button button-full button-stable" ng-click="modal.hide()">
                 <i class="icon ion-ios-plus-empty"></i>
                 Add
             </button>
-        </div>
+        </form>
     </ion-content>
 </ion-modal-view>

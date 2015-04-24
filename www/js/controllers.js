@@ -8,10 +8,6 @@ angular.module('starter.controllers', [])
 
 .controller('LinesCtrl', function($scope, $ionicModal, Lines) {
   $scope.lines = Lines.all();
-    
-  $scope.remove = function(line) {
-    Lines.remove(line);
-  }
 
   $ionicModal.fromTemplateUrl('templates/modals/filter-modal.html', {
         scope: $scope
@@ -47,6 +43,11 @@ angular.module('starter.controllers', [])
     $scope.route = Lines.getRoute($stateParams.routeId);
     $scope.line = Lines.getLine($stateParams.lineId);
     $scope.attemptList = RouteAttempts.get($stateParams.routeId);
+    
+    $scope.addClimb = function(attempt){
+        RouteAttempts.add($stateParams.routeId, attempt.success);
+        $scope.attemptList = RouteAttempts.get($stateParams.routeId);
+    }
     
     $ionicModal.fromTemplateUrl('templates/modals/add-attempt-modal.html', {
         scope: $scope
