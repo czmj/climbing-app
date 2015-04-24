@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
         $scope.attemptList = RouteAttempts.get($stateParams.routeId);
     }
     
-    $ionicModal.fromTemplateUrl('templates/modals/add-attempt-modal.html', {
+    $ionicModal.fromTemplateUrl('templates/modals/add-climb-modal.html', {
         scope: $scope
       
     }).then(function(modal) {
