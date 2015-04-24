@@ -1,16 +1,19 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope, $stateParams, Users) {
+    $scope.users = Users.all();
+    $scope.user = Users.get($stateParams.userId);
 
-.controller('SearchCtrl', function($scope) {})
+})
 
 .controller('LinesCtrl', function($scope, $ionicModal, Lines) {
   $scope.lines = Lines.all();
+    
   $scope.remove = function(line) {
     Lines.remove(line);
   }
 
-  $ionicModal.fromTemplateUrl('templates/filter-modal.html', {
+  $ionicModal.fromTemplateUrl('templates/modals/filter-modal.html', {
         scope: $scope
       
     }).then(function(modal) {
@@ -29,12 +32,23 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('RouteDetailCtrl', function($scope, $stateParams, $ionicModal, Lines, routeAttempts) {
+.controller('RegisterCtrl', function($scope, Users) {
+
+    $scope.users = Users.all();    
+    $scope.addUser = function(firstName,lastName){
+        Users.add(firstName, lastName);
+    }
+    
+    $scope.addUser('Alice','Snorgbottom');
+
+})
+
+.controller('RouteDetailCtrl', function($scope, $stateParams, $ionicModal, Lines, RouteAttempts) {
     $scope.route = Lines.getRoute($stateParams.routeId);
     $scope.line = Lines.getLine($stateParams.lineId);
-    $scope.attemptList = routeAttempts.get($stateParams.routeId);
+    $scope.attemptList = RouteAttempts.get($stateParams.routeId);
     
-    $ionicModal.fromTemplateUrl('templates/add-attempt-modal.html', {
+    $ionicModal.fromTemplateUrl('templates/modals/add-attempt-modal.html', {
         scope: $scope
       
     }).then(function(modal) {
@@ -52,3 +66,5 @@ angular.module('starter.controllers', [])
         $scope.modal.show();
     };
 })
+
+.controller('SearchCtrl', function($scope) {})

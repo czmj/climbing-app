@@ -108,7 +108,7 @@ angular.module('starter.services', [])
     }
 })
 
-.factory('routeAttempts', function() {
+.factory('RouteAttempts', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -164,10 +164,10 @@ angular.module('starter.services', [])
 
   return {
         all: function() {
-          return lines;
+          return attempts;
         },
-        remove: function(line) {
-          lines.splice(lines.indexOf(line), 1);
+        remove: function(attempt) {
+          attempts.splice(attempts.indexOf(attempt), 1);
         },
         get: function(routeId) {
             var attemptList = [];
@@ -182,6 +182,57 @@ angular.module('starter.services', [])
             }
             
             return attemptList;
+        }
+    }
+})
+
+.factory('Users', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var users = [{
+      id: 1,
+      firstName: 'Clara',
+      lastName: 'Jordan',
+      image: 'clara.jpg',
+      highestGrade: '6a',  
+      averageGrade: '5'
+  },{
+      id: 2,
+      firstName: 'Tim',
+      lastName: 'Dobson',
+      image: 'tim.jpg',
+      highestGrade: '6b',  
+      averageGrade: '5+'
+  }];
+
+  return {
+        all: function() {
+          return users;
+        },
+        add: function(input_firstName,input_lastName) {
+            var userId = users.length + 1;
+            var user = {
+                id: userId,
+                firstName: input_firstName,
+                lastName: input_lastName,
+                image: 'ionic.png',
+                highestGrade: '',
+                averageGrade: ''
+            }
+            
+            users.push(user);
+        },
+        remove: function(user) {
+          users.splice(users.indexOf(user), 1);
+        },
+        get: function(userId) {
+            for (var i = 0; i < users.length; i++) {
+                if (users[i].id === parseInt(userId)) {
+                  return users[i];
+                }
+            }
+            return null;
         }
     }
 });
