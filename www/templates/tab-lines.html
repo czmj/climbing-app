@@ -9,12 +9,12 @@
             <div class="item item-divider">
                 <h2 style="float:left; font-size: 20px">Line {{line.id}}</h2>
                 <span class="item-note">
-                  {{line.type | capitalize: true}}
+                  {{line.type | capitalize}}
                 </span>
             </div>
             <div ng-repeat="route in line.routes">
                 <a class="item item-icon-right" href="#/tab/routes/{{line.id}}/{{route.id}}" >
-                    <h2>{{route.color | capitalize:true}} {{route.grade}}</h2>
+                    <h2>{{route.color | capitalize}} {{route.grade | grade}}</h2>
                     <p>Set by {{route.setter}} on {{route.dateSet | date: mediumDate}}</p>
                     <img src="img/tim.jpg" style="width: 25px; height: 25px; border-radius: 100%">
                     <img src="img/clara.jpg" style="width: 25px; height: 25px; border-radius: 100%">

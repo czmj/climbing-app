@@ -6,27 +6,29 @@
         </button>
     </ion-header-bar>
     <ion-content>
-        <div class="list">
-            <div class="item range range-positive">
-                <i class="icon ion-ios7-sunny-outline"></i>
-                <input type="range" name="volume" min="0" max="100" value="33">
-                <i class="icon ion-ios7-sunny"></i>
-            </div>
-            <div class="item range range-positive">
-                <i class="icon ion-ios7-sunny-outline"></i>
-                <input type="range" name="volume" min="0" max="100" value="33">
-                <i class="icon ion-ios7-sunny"></i>
-            </div>
-            <div class="item item-checkbox">
-                <label class="checkbox">
-                    <input type="checkbox">
-                </label>
+        <form class="list">
+            <ion-checkbox ng-model="filter.grade.four_plus">
+                4+
+            </ion-checkbox>
+            <ion-checkbox ng-model="filter.grade.five">
+                5
+            </ion-checkbox>
+            <ion-checkbox ng-model="filter.grade.five_plus">
+                5+
+            </ion-checkbox>
+            <ion-checkbox ng-model="filter.grade.six_a">
+                6a
+            </ion-checkbox>
+            
+            <ion-checkbox ng-model="filter.completed">
                 Include completed routes
-            </div>
+            </ion-checkbox>
             <button class="button button-block button-stable" ng-click="modal.hide()">
                 <i class="icon ion-funnel"></i>
                 Filter
             </button>
-        </div>
+            
+            {{filter}}
+        </form>
     </ion-content>
 </ion-modal-view>

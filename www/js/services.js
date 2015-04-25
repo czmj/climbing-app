@@ -11,19 +11,19 @@ angular.module('starter.services', [])
       routes: [{
           id: 1,
           color: 'pink', 
-          grade: '4+',
+          grade: 4.5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z',
       },{
           id: 2,
           color: 'grey',
-          grade: '5+',
+          grade: 5.5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 3,
           color: 'black',
-          grade: '6a',
+          grade: 6,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -34,13 +34,13 @@ angular.module('starter.services', [])
       routes: [{
           id: 4,
           color: 'rainbow',
-          grade: '5',
+          grade: 5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 5,
           color: 'blue',
-          grade: '5+',
+          grade: 5.5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -51,7 +51,7 @@ angular.module('starter.services', [])
       routes: [{
           id: 6,
           color: 'yellow',
-          grade: '5',
+          grade: 5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -62,7 +62,7 @@ angular.module('starter.services', [])
       routes: [{
           id: 7,
           color: 'pink',
-          grade: '4+',
+          grade: 4.5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -73,13 +73,13 @@ angular.module('starter.services', [])
       routes: [{
           id: 8,
           color: 'blue',
-          grade: '4+',
+          grade: 4.5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 9,
           color: 'green',
-          grade: '4+',
+          grade: 7,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -214,15 +214,15 @@ angular.module('starter.services', [])
       firstName: 'Clara',
       lastName: 'Jordan',
       image: 'clara.jpg',
-      highestGrade: '6a',  
-      averageGrade: '5'
+      highestGrade: 6,  
+      averageGrade: 5
   },{
       id: 2,
       firstName: 'Tim',
       lastName: 'Dobson',
       image: 'tim.jpg',
-      highestGrade: '6b',  
-      averageGrade: '5+'
+      highestGrade: 7,  
+      averageGrade: 5.5
   }];
 
   return {
