@@ -1,0 +1,8 @@
+//Variables
+@import "variables"; 
+
+// Include all of Ionic this - should be included after variables and before component styles
+@import "www/lib/ionic/scss/ionic";
+
+//Components
+@import "range"; 

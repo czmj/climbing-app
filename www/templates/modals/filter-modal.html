@@ -7,18 +7,15 @@
     </ion-header-bar>
     <ion-content>
         <form class="list">
-            <ion-checkbox ng-model="filter.grade.four_plus">
-                4+
-            </ion-checkbox>
-            <ion-checkbox ng-model="filter.grade.five">
-                5
-            </ion-checkbox>
-            <ion-checkbox ng-model="filter.grade.five_plus">
-                5+
-            </ion-checkbox>
-            <ion-checkbox ng-model="filter.grade.six_a">
-                6a
-            </ion-checkbox>
+            <ion-item>
+                <rzslider
+                  rz-slider-floor="gradeMin"
+                    rz-slider-ceil="gradeMax"
+                    rz-slider-model="gradeLow"
+                    rz-slider-high="gradeHigh"
+                    rz-slider-translate="gradeTranslate">
+                </rzslider>
+            </ion-item>
             
             <ion-checkbox ng-model="filter.completed">
                 Include completed routes
@@ -27,8 +24,7 @@
                 <i class="icon ion-funnel"></i>
                 Filter
             </button>
-            
-            {{filter}}
+
         </form>
     </ion-content>
 </ion-modal-view>

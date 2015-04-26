@@ -11,19 +11,19 @@ angular.module('starter.services', [])
       routes: [{
           id: 1,
           color: 'pink', 
-          grade: 4.5,
+          grade: 7,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z',
       },{
           id: 2,
           color: 'grey',
-          grade: 5.5,
+          grade: 9,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 3,
           color: 'black',
-          grade: 6,
+          grade: 12,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -34,13 +34,13 @@ angular.module('starter.services', [])
       routes: [{
           id: 4,
           color: 'rainbow',
-          grade: 5,
+          grade: 3,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       },{
           id: 5,
           color: 'blue',
-          grade: 5.5,
+          grade: 5,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -62,7 +62,7 @@ angular.module('starter.services', [])
       routes: [{
           id: 7,
           color: 'pink',
-          grade: 4.5,
+          grade: 8,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       }]
@@ -73,7 +73,7 @@ angular.module('starter.services', [])
       routes: [{
           id: 8,
           color: 'blue',
-          grade: 4.5,
+          grade: 6,
           setter: 'A. Jack',
           dateSet: '2015-04-20T18:37:56.552Z'
       },{
@@ -214,15 +214,15 @@ angular.module('starter.services', [])
       firstName: 'Clara',
       lastName: 'Jordan',
       image: 'clara.jpg',
-      highestGrade: 6,  
-      averageGrade: 5
+      highestGrade: 9,  
+      averageGrade: 7
   },{
       id: 2,
       firstName: 'Tim',
       lastName: 'Dobson',
       image: 'tim.jpg',
-      highestGrade: 7,  
-      averageGrade: 5.5
+      highestGrade: 10,  
+      averageGrade: 8
   }];
 
   return {
