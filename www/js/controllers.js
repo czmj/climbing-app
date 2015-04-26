@@ -6,27 +6,8 @@ angular.module('starter.controllers', ['rzModule'])
 
 })
 
-.controller('LinesCtrl', function($scope, $ionicModal, Lines) {
+.controller('LinesCtrl', function($scope, Lines) {
     $scope.lines = Lines.all();
-
-    //modal
-    $ionicModal.fromTemplateUrl('templates/modals/filter-modal.html', {
-        scope: $scope
-      
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.closeModal = function(index) {
-        $scope.modal.hide();
-    };
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
-
-    $scope.openModal = function() {
-        $scope.modal.show();
-    };
     
     //range slider - rz-slider
     var gradeArray = ["1","2","3","3+","4","4+","5","5+","6a","6a+","6b","6b+","6c","6c+","7a","7a+","7b","7b+","7c","7c+","8a","8a+","8b","8b+","8c","8c+"];
@@ -43,9 +24,17 @@ angular.module('starter.controllers', ['rzModule'])
     $scope.filter = {
         gradeLow: 4,
         gradeHigh: 21,
-        completed: true
+        completed: true,
+        shown: false
     }
     
+    $scope.toggleFilter = function() {
+        if($scope.filter.shown) {
+            $scope.filter.shown = false;
+        }else{
+            $scope.filter.shown = true;
+        }
+    }
 })
 
 .controller('RegisterCtrl', function($scope, Users) {

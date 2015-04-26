@@ -1,9 +1,23 @@
 <ion-view view-title="Routes">
     <ion-nav-buttons side="right">
-        <button class="button button-icon ion-funnel" ng-click="openModal()"></button>
+        <button class="button button-icon ion-funnel" ng-click="toggleFilter()"></button>
     </ion-nav-buttons>    
   
   <ion-content>
+<form class="padding item item-divider" ng-show="filter.shown">
+        <rzslider
+                  rz-slider-floor="gradeMin"
+                  rz-slider-ceil="gradeMax"
+                  rz-slider-model="filter.gradeLow"
+                  rz-slider-high="filter.gradeHigh"
+                  rz-slider-translate="gradeTranslate">
+        </rzslider>
+        
+            <!--<ion-checkbox ng-model="filter.completed">
+                Include completed routes
+            </ion-checkbox>-->
+</form>
+
     <div class="list">
         <div ng-repeat="line in lines">
             <div class="item item-divider">

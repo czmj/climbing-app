@@ -1,26 +1,11 @@
-<ion-modal-view>
-    <ion-header-bar class="bar bar-header bar-positive">
-        <h1 class="title">Filter routes</h1>
-        <button class="button button-clear button-primary" ng-click="modal.hide()">
-            <i class="icon ion-ios-close-empty"></i>
-        </button>
-    </ion-header-bar>
-    <ion-content>
-        <form class="list">
-            <ion-item>
-                <rzslider
+<form class="list">
+    <ion-item>
+        <rzslider
                   rz-slider-floor="gradeMin"
-                    rz-slider-ceil="gradeMax"
-                    rz-slider-model="filter.gradeLow"
-                    rz-slider-high="filter.gradeHigh"
-                    rz-slider-translate="gradeTranslate">
-                </rzslider>
-            </ion-item>
-            
-            <!--<ion-checkbox ng-model="filter.completed">
-                Include completed routes
-            </ion-checkbox>-->
-
-        </form>
-    </ion-content>
-</ion-modal-view>
+                  rz-slider-ceil="gradeMax"
+                  rz-slider-model="filter.gradeLow"
+                  rz-slider-high="filter.gradeHigh"
+                  rz-slider-translate="gradeTranslate">
+        </rzslider>
+    </ion-item>
+</form>

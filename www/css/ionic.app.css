@@ -6515,8 +6515,8 @@ progress {
     padding-right: 0;
     padding-left: .2em; }
   .button.button-block, .button.button-full {
-    margin-top: 10px;
-    margin-bottom: 10px; }
+    margin-top: 0px;
+    margin-bottom: 0px; }
   .button.button-light {
     border-color: #ddd;
     background-color: #fff;
@@ -7655,3 +7655,6 @@ rzslider {
     top: 15px; }
   rzslider .range-bubble.limit {
     /*color: #808080;*/ }
+
+.button.button-full {
+  margin-top: 0; }
