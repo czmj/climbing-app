@@ -1,2 +1,4 @@
 - Concatenate plugins
+- Hide divider in list when routes are filtered out
++ filter at top of view not top of page
 

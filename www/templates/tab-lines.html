@@ -3,8 +3,8 @@
         <button class="button button-icon ion-funnel" ng-click="toggleFilter()"></button>
     </ion-nav-buttons>    
   
-  <ion-content>
-<form class="padding item item-divider" ng-show="filter.shown">
+<div class="bar bar-stable bar-subheader" ng-show="filter.shown">
+  <form class="padding">
         <rzslider
                   rz-slider-floor="gradeMin"
                   rz-slider-ceil="gradeMax"
@@ -16,7 +16,10 @@
             <!--<ion-checkbox ng-model="filter.completed">
                 Include completed routes
             </ion-checkbox>-->
-</form>
+    </form>
+</div>
+    
+  <ion-content ng-class="{'has-subheader': filter.shown}">
 
     <div class="list">
         <div ng-repeat="line in lines">
