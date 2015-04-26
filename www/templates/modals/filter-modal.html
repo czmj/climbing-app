@@ -11,19 +11,15 @@
                 <rzslider
                   rz-slider-floor="gradeMin"
                     rz-slider-ceil="gradeMax"
-                    rz-slider-model="gradeLow"
-                    rz-slider-high="gradeHigh"
+                    rz-slider-model="filter.gradeLow"
+                    rz-slider-high="filter.gradeHigh"
                     rz-slider-translate="gradeTranslate">
                 </rzslider>
             </ion-item>
             
-            <ion-checkbox ng-model="filter.completed">
+            <!--<ion-checkbox ng-model="filter.completed">
                 Include completed routes
-            </ion-checkbox>
-            <button class="button button-block button-stable" ng-click="modal.hide()">
-                <i class="icon ion-funnel"></i>
-                Filter
-            </button>
+            </ion-checkbox>-->
 
         </form>
     </ion-content>

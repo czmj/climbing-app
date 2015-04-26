@@ -13,15 +13,14 @@
                 </span>
             </div>
             <div ng-repeat="route in line.routes">
-                <a class="item item-icon-right" href="#/tab/routes/{{line.id}}/{{route.id}}" >
+                <a class="item item-icon-right" href="#/tab/routes/{{line.id}}/{{route.id}}" ng-show="route.grade >= filter.gradeLow && route.grade <= filter.gradeHigh">
                     <h2>{{route.color | capitalize}} {{route.grade | grade}}</h2>
                     <p>Set by {{route.setter}} on {{route.dateSet | date: mediumDate}}</p>
                     <img src="img/tim.jpg" style="width: 25px; height: 25px; border-radius: 100%">
                     <img src="img/clara.jpg" style="width: 25px; height: 25px; border-radius: 100%">
 
                     <i class="icon ion-chevron-right icon-accessory"></i>      
-                </a>
-                
+                </a>                
             </div>
         </div> 
     </div>

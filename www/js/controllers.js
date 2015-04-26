@@ -7,10 +7,10 @@ angular.module('starter.controllers', ['rzModule'])
 })
 
 .controller('LinesCtrl', function($scope, $ionicModal, Lines) {
-  $scope.lines = Lines.all();
+    $scope.lines = Lines.all();
 
     //modal
-  $ionicModal.fromTemplateUrl('templates/modals/filter-modal.html', {
+    $ionicModal.fromTemplateUrl('templates/modals/filter-modal.html', {
         scope: $scope
       
     }).then(function(modal) {
@@ -30,9 +30,7 @@ angular.module('starter.controllers', ['rzModule'])
     
     //range slider - rz-slider
     var gradeArray = ["1","2","3","3+","4","4+","5","5+","6a","6a+","6b","6b+","6c","6c+","7a","7a+","7b","7b+","7c","7c+","8a","8a+","8b","8b+","8c","8c+"];
-  
-    $scope.gradeLow = 6;
-    $scope.gradeHigh = 10;
+    
     $scope.gradeMax = gradeArray.length - 1;
     $scope.gradeMin = 2;
     
@@ -40,6 +38,13 @@ angular.module('starter.controllers', ['rzModule'])
     {
         return gradeArray[value];
     };
+    
+    //filter
+    $scope.filter = {
+        gradeLow: 4,
+        gradeHigh: 21,
+        completed: true
+    }
     
 })
 
