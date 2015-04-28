@@ -12,8 +12,8 @@ angular.module('starter.controllers', ['rzModule'])
     //range slider - rz-slider
     var gradeArray = ["1","2","3","3+","4","4+","5","5+","6a","6a+","6b","6b+","6c","6c+","7a","7a+","7b","7b+","7c","7c+","8a","8a+","8b","8b+","8c","8c+"];
     
-    $scope.gradeMax = gradeArray.length - 4;
-    $scope.gradeMin = 3;
+    $scope.gradeMax = 25;
+    $scope.gradeMin = 0;
     
     $scope.gradeTranslate = function(value)
     {
@@ -22,8 +22,8 @@ angular.module('starter.controllers', ['rzModule'])
     
     //filter
     $scope.filter = {
-        gradeLow: 4,
-        gradeHigh: 21,
+        gradeLow: 3,
+        gradeHigh: 19,
         completed: true,
         shown: false
     }

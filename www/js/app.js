@@ -21,62 +21,67 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
-  $stateProvider
+    $ionicConfigProvider.tabs.position("bottom");
+    $ionicConfigProvider.tabs.style("standard");
+    $ionicConfigProvider.platform.android.tabs.style('standard');
+    $ionicConfigProvider.platform.android.tabs.position('bottom');
+    
+    // Ionic uses AngularUI Router which uses the concept of states
+    // Learn more here: https://github.com/angular-ui/ui-router
+    // Set up the various states which the app can be in.
+    // Each state's controller can be found in controllers.js
+    $stateProvider
 
-  // setup an abstract state for the tabs directive
+    // setup an abstract state for the tabs directive
     .state('tab', {
-    url: "/tab",
-    abstract: true,
-    templateUrl: "templates/tabs.html"
-  })
+        url: "/tab",
+        abstract: true,
+        templateUrl: "templates/tabs.html"
+    })
 
-  // Each tab has its own nav history stack:
+    // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash/:userId',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-  .state('tab.register', {
-    url: '/register',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/register.html',
-        controller: 'RegisterCtrl'
-      }
-    }
-  })
-  
-  .state('tab.lines', {
-    url: '/lines',
-    views: {
-      'tab-lines': {
-        templateUrl: 'templates/tab-lines.html',
-        controller: 'LinesCtrl'
-      }
-    }
-  })
-  .state('tab.route', {
-    url: '/routes/:lineId/:routeId',
-    views: {
-      'tab-lines': {
-        templateUrl: 'templates/route-detail.html',
-        controller: 'RouteDetailCtrl'
-      }
-    }
-  });
+    .state('tab.dash', {
+        url: '/dash/:userId',
+        views: {
+          'tab-dash': {
+            templateUrl: 'templates/tab-dash.html',
+            controller: 'DashCtrl'
+          }
+        }
+    })
+    .state('tab.register', {
+        url: '/register',
+        views: {
+          'tab-dash': {
+            templateUrl: 'templates/register.html',
+            controller: 'RegisterCtrl'
+          }
+        }
+    })
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash/1');
+    .state('tab.lines', {
+        url: '/lines',
+        views: {
+          'tab-lines': {
+            templateUrl: 'templates/tab-lines.html',
+            controller: 'LinesCtrl'
+          }
+        }
+    })
+    .state('tab.route', {
+        url: '/routes/:lineId/:routeId',
+        views: {
+          'tab-lines': {
+            templateUrl: 'templates/route-detail.html',
+            controller: 'RouteDetailCtrl'
+          }
+        }
+    });
+
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/tab/dash/1');
 
 });

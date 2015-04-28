@@ -18,7 +18,7 @@ angular.module('starter.filters', [])
  
 .filter('grade', function() {
   return function(input){
-      var intGrade = Math.floor(input-1);
+      var intGrade = Math.floor(input);
       
       switch(intGrade) {
               case 0: return "1";

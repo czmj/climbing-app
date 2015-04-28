@@ -7656,5 +7656,10 @@ rzslider {
   rzslider .range-bubble.limit {
     /*color: #808080;*/ }
 
+.tabs-top .bar-subheader {
+  top: 88px !important; }
+.tabs-top .has-subheader {
+  top: 188px !important; }
+
 .button.button-full {
   margin-top: 0; }

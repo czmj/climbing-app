@@ -1,0 +1,9 @@
+.tabs-top{
+     .bar-subheader{
+        top: $bar-height * 2 !important;
+    }
+    
+    .has-subheader{
+      top: $bar-height * 2 + $bar-subheader-height !important;
+    }
+}
